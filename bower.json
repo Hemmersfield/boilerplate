@@ -1,9 +1,9 @@
 {
-  "name": "MIA",
+  "name": "MCMNET_Boilerplate",
   "authors": [
     "Dan Hemsley <djh@mcmnet.co.uk>"
   ],
-  "description": "Medical Industry Accredited",
+  "description": "A boilerplate for starting new web projects",
   "main": "",
   "license": "MIT",
   "homepage": "",

@@ -3,7 +3,7 @@ module.exports = function(grunt){
   //configuration
   grunt.initConfig({
 
-    //Compile sass into a temp css
+    //compile sass into a temp css
     sass: {
       build: {
         files:[{
@@ -14,15 +14,16 @@ module.exports = function(grunt){
     },
 
     concat: {
-      //Group all Boilerplate JS into one file(not including scripts.js)
+      //group all Boilerplate JS into one file (not including scripts.js)
       boilerplate_js:{
         src:[
           '**/jquery.min.js'
+          //add any additional vendor js here
         ],
         dest: 'scripts/boilerplate.js'
       },
       
-      //Fetch generated CSS from the temp directory
+      //fetch generated CSS from the temp directory
       css:{
         src:[
         '.tmp/*.css'
@@ -30,7 +31,7 @@ module.exports = function(grunt){
         dest: 'styles/main.css'
       },
 
-      //Group all Boilerplate CSS into one file
+      //group all Boilerplate CSS into one file
       boilerplate_css:{
         src:[
         '**/normalize.css',
@@ -41,7 +42,7 @@ module.exports = function(grunt){
 
     },
 
-    //Watch for changes in the dev code
+    //watch for changes
     watch:{
       options:{
         livereload: true
@@ -53,11 +54,12 @@ module.exports = function(grunt){
       ],
       tasks:[ 
         'sass', 
-        'concat:css'
+        'concat:css',
+        'clean'
         ]
     },
 
-    //Remove temp directory
+    //remove temp directory
     clean: {
       temp: {
         src: ['.tmp']
@@ -67,7 +69,7 @@ module.exports = function(grunt){
       }
     },
 
-    //Setting up a Live reload server
+    //setting up a live reload server
     express:{
       all:{
         options:{
@@ -80,38 +82,13 @@ module.exports = function(grunt){
       }
     },
 
-    //Open the project server in a browser
+    //Run a local server
     open:{
        dev: {
         path: 'http://localhost:9000/static/'
       }
     },
 
-    //Tasks for deployment
-
-    //Compress all JS
-    uglify:{
-      build:{
-        src: [
-        'app/scripts/boilerplate.js',
-        'app/scripts/scripts.js'
-        ],
-        dest: 'app/.tmp/scripts/scripts.js'
-      }
-    },
-
-    //Make copies into seperate projects
-    copy: {
-      'static':{
-        src: [
-          '.tmp/scripts/scripts.js',
-          'styles/main.css'
-        ], 
-        dest: 'dist/static/'
-      }
-    }
-
-    //Add CSS.min
 
   });
 
@@ -125,24 +102,14 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-express');
 
-  //Register Tasks
-
-  grunt.registerTask('build', [
-    'clean:dist',
-    'generate',
-    'uglify',
-    'copy:static'
-    ]); 
 
   //Generate the project dependancies
   grunt.registerTask('generate', [
-    'sass',
     'concat'
     ]);
   
   //Run Project Locally
   grunt.registerTask('server', [
-    'generate',
     'express',
     'open',
     'watch'
