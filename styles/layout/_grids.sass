@@ -1,0 +1,71 @@
+/**
+ * LAYOUT
+ * Grids
+ * Some light Grids
+ */
+
+//grids
+$grid-spacing-init: 20px
+$grid-spacing: $grid-spacing-init * 2
+$grid-width: 100%
+
+//Initiate the grids as scilent classes.
+
+=grid
+  display: flex
+  flex-wrap: wrap
+  min-width: $grid-width
+  margin-left: -$grid-spacing-init
+
+  +respond-to(medium-and-up)
+    margin-left: -$grid-spacing
+
+=grid-item
+  padding-left: $grid-spacing-init
+  width: $grid-width
+
+  +respond-to(medium-and-up)
+    padding-left: $grid-spacing
+
+=grid-item-two
+  +grid-item
+  width: $grid-width / 2
+
+=grid-item-three
+  +grid-item
+  width: $grid-width / 3
+
+=grid-item-four
+  +grid-item
+  width: $grid-width / 4
+  
+
+//Create Selectors and extend grids
+
+.grid
+  +grid
+  > *
+    +grid-item
+
+.grid--of-two
+  > *
+    +respond-to(medium-and-up)
+      +grid-item-two
+
+.grid--of-three
+  > *
+    +respond-to(medium-and-up)
+      +grid-item-two
+
+    +respond-to(wide-and-up)
+      +grid-item-three
+
+%grid--of-four
+  > *
+    +respond-to(medium-and-up)
+      +grid-item-two
+
+    +respond-to(wide-and-up)
+      +grid-item-four
+
+
