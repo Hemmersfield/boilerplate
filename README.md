@@ -27,7 +27,7 @@ Clone a copy of the boilerplate to your local Repos directory:
 $ git clone https://github.com/Hemmersfield/mcmnet-boilerplate.git
 ```
 
-Rename the project to suit your needs, e.g. 'my-new-website'.
+Rename the project to suit your needs, e.g. 'my-new-website'
 
 
 CD into the root and run the following command:
@@ -36,7 +36,7 @@ CD into the root and run the following command:
 $ npm install && bower install
 ```
 
-Once complete you are ready to to compile all bass boilerplate dependancies into the root directories, e.g. jquery, normolizs.css This only needs to be done once, or any time you want to pull in more third party resources.
+Once complete you are ready to to compile all base boilerplate dependancies into the root directories, e.g. jquery, normolizs.css This only needs to be done once, or any time you want to pull in more third party resources.
 
 ```
 $ grunt generate
