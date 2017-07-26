@@ -21,7 +21,16 @@ Before you can run the boilerplate you'll need to first install the following de
 
 ### Running the Boilerplate
 
-Clone a copy of the boilerplate to your local Repos directory. CD into the root and run the following command:
+Clone a copy of the boilerplate to your local Repos directory:
+
+```
+$ git clone https://github.com/Hemmersfield/mcmnet-boilerplate.git
+```
+
+Rename the project to suit your needs, e.g. 'my-new-website'.
+
+
+CD into the root and run the following command:
 
 ```
 $ npm install && bower install
