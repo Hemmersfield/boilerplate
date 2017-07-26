@@ -89,6 +89,15 @@ module.exports = function(grunt){
       }
     },
 
+    uglify:{
+      build:{
+        src: [
+          'scripts/scripts.js'
+          ],
+          dest: 'dist/scripts/scripts.js'
+      },
+    }
+
 
   });
 
@@ -102,6 +111,12 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-express');
 
+
+  //Build Project
+  grunt.registerTask('build', [
+    'clean:dist',
+    'uglify'
+    ]);
 
   //Generate the project dependancies
   grunt.registerTask('generate', [
