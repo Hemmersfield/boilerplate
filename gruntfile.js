@@ -28,7 +28,7 @@ module.exports = function(grunt){
         src:[
         '.tmp/*.css'
         ],
-        dest: 'styles/main.css'
+        dest: 'css/main.css'
       },
 
       //group all Boilerplate CSS into one file
@@ -37,7 +37,7 @@ module.exports = function(grunt){
         '**/normalize.css',
         '**/slick.css'
         ],
-        dest: 'styles/base.css'
+        dest: 'css/base.css'
       }
 
     },
