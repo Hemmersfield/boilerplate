@@ -1,5 +1,3 @@
-![](https://github.com/Hemmersfield/boilerplate/blob/master/images/logo.svg)
-
 # MCMNET Boilerplate
 
 We've written our own custom boilerplate that suits our development needs. 
